@@ -14,7 +14,7 @@ st.set_page_config(
 
 @st.cache_data
 def load_data():
-    file_path = 'P2P_Review.xlsx'
+    file_path = 'P2P Review.xlsx'
     
     company_sheets = ['SW', 'PKG', 'IP', 'GPI', 'SK', 'WK']
     company_data = {}
