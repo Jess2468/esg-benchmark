@@ -36,13 +36,12 @@ def extract_company_metrics(df):
     metrics = []
     for idx in range(4, len(df)):
         row = df.iloc[idx]
-        if not pd.isna(row[0]) and not pd.isna(row[3]):
-            metric_name = row[0]
-            weight = row[2] if not pd.isna(row[2]) else 0
-            score = row[3] if not pd.isna(row[3]) else 0
-            disclosure = row[4] if len(row) > 4 and not pd.isna(row[4]) else 0
-            peer_rank = row[5] if len(row) > 5 and not pd.isna(row[5]) else "N/A"
-            
+       if not pd.isna(row.iloc[0]) and not pd.isna(row.iloc[3]):
+            metric_name = row.iloc[0]
+            weight = row.iloc[2] if not pd.isna(row.iloc[2]) else 0
+            score = row.iloc[3] if not pd.isna(row.iloc[3]) else 0
+            disclosure = row.iloc[4] if len(row) > 4 and not pd.isna(row.iloc[4]) else 0
+            peer_rank = row.iloc[5] if len(row) > 5 and not pd.isna(row.iloc[5]) else "N/A"
             metrics.append({
                 'Metric': metric_name,
                 'Weight': weight,
